@@ -31,6 +31,7 @@ public class TempConvert {
         boolean isNotValid = true;
 
         while (isNotValid) {
+            toFormat = keyboard.nextLine().toLowerCase();
             if (toFormat.equalsIgnoreCase("c")) {
                 convertedTemp = Math.round(convertFToC(tempAsInt));
                 isNotValid = false;
