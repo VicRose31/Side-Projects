@@ -29,7 +29,7 @@ public class CurrencyConvert {
 
         String startingCurrency = keyboard.nextLine();
 
-        
+
 
 
     }
