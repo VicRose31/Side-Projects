@@ -48,7 +48,7 @@ let routes = [
 function findErrors (routes) {
     let errors = 0;
 
-    for (let i = 0; i < routes.length-1; i++) {
+    for (let i = 0; i < routes.length-2; i++) {
         for (let j = i+1; j < routes.length; j++) {
             if (routes[i].userIdentifier == routes[j].userIdentifier) { //if the usersare the same...
                 if (routes[i].date == routes[j].date) {                 //and the date is the same..
