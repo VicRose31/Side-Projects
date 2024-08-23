@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class CurrencyConvert {
     public static void main(String[] args) {
-        TempConvert tempConvert = new TempConvert();
-        tempConvert.run();
+        CurrencyConvert currencyConvert = new CurrencyConvert();
+        currencyConvert.run();
     }
 
     public void run() {
