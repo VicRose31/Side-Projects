@@ -10,6 +10,8 @@ public class CurrencyConvert {
 
         Scanner keyboard = new Scanner(System.in);
 
+
+
         final String USD_FORMAT = "United States Dollar";
         final String EUR_FORMAT = "Euro";
         final String ARS_FORMAT = "Argentine Peso";
@@ -17,6 +19,7 @@ public class CurrencyConvert {
         final String CAD_FORMAT = "Canadian Dollar";
         final String JPY_FORMAT = "Japanese Yen";
         final String KWD_FORMAT = "Kuwaiti Dinar";
+        final String NGN_FORMAT = "Nigerian Naira";
 
         System.out.println("Please select the starting currency;");
         System.out.println("1. " + ARS_FORMAT);
@@ -25,9 +28,13 @@ public class CurrencyConvert {
         System.out.println("4. " + INR_FORMAT);
         System.out.println("5. " + JPY_FORMAT);
         System.out.println("6. " + KWD_FORMAT);
-        System.out.println("7. " + USD_FORMAT);
+        System.out.println("7. " + NGN_FORMAT);
+        System.out.println("8. " + USD_FORMAT);
+
 
         String startingCurrency = keyboard.nextLine();
+
+
 
 
 
