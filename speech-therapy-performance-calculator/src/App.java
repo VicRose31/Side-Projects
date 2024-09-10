@@ -73,10 +73,10 @@ public class App {
         double totalAnswered = ((double) answered / questionsInSet) * 100;
         double totalUnanswered = ((double) unanswered / questionsInSet) * 100;
 
-        System.out.println("Questions answered without prompt:            " + withoutPrompt + " out of " + questionsInSet + " or " + totalWithoutPrompt + "%.");
-        System.out.println("Questions answered with prompt:               " + withPrompt + " out of " + questionsInSet + " or " + totalWithPrompt + "%.");
-        System.out.println("Questions answered with and without prompt:   " + answered + " out of " + questionsInSet + " or " + totalAnswered + "%.");
-        System.out.println("Questions unanswered:                         " + unanswered + " out of " + questionsInSet + " or " + totalUnanswered + "%.");
+        System.out.println("Questions answered without prompt:            " + withoutPrompt + "/" + questionsInSet + " or " + totalWithoutPrompt + "%.");
+        System.out.println("Questions answered with prompt:               " + withPrompt + "/" + questionsInSet + " or " + totalWithPrompt + "%.");
+        System.out.println("Questions answered with and without prompt:   " + answered + "/" + questionsInSet + " or " + totalAnswered + "%.");
+        System.out.println("Questions unanswered:                         " + unanswered + "/" + questionsInSet + " or " + totalUnanswered + "%.");
 
 
 
