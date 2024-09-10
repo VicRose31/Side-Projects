@@ -1,3 +1,9 @@
+package main.java.com;
+
+import main.java.com.model.Currency;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class CurrencyConvert {
@@ -10,7 +16,7 @@ public class CurrencyConvert {
 
         Scanner keyboard = new Scanner(System.in);
 
-
+        List<Currency> currencies = new ArrayList<>();
 
         final String USD_FORMAT = "United States Dollar";
         final String EUR_FORMAT = "Euro";
@@ -33,6 +39,7 @@ public class CurrencyConvert {
 
 
         String startingCurrency = keyboard.nextLine();
+        System.out.println("You have selected " + startingCurrency + " as your starting currency.");
 
 
 
