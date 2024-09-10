@@ -12,10 +12,9 @@ public class App {
     private void run() {
 
         int questionsInSet = 0;
-        double answeredQuestions = 0.0;
         int withoutPrompt = 0;
         int withPrompt = 0;
-        int notAnswered = 0;
+        int unanswered = 0;
         boolean isANumber = false;
 
         System.out.println("How many questions are in this set?");
@@ -47,28 +46,39 @@ public class App {
 
         for (int i = 1; i <= questionsInSet; i++) {
             boolean isValidResponse = false;
-            System.out.println("Question " + i + ": " + "\n" + "(Y) without help" +
+            System.out.println("\n" + "Question " + i + ": " + "\n" + "(Y) without help" +
                     "\n" + "(H) with help" + "\n" + "(N) no answer" + "\n");
 
             while (!isValidResponse) {
                 String answer = keyboard.nextLine();
 
-                if (answer.toLowerCase().equals("y")) {
+                if (answer.equalsIgnoreCase("y")) {
                     withoutPrompt++;
                     isValidResponse = true;
-                } else if (answer.toLowerCase().equals("h")) {
+                } else if (answer.equalsIgnoreCase("h")) {
                     withPrompt++;
                     isValidResponse = true;
-                } else if (answer.toLowerCase().equals("n")) {
-                    notAnswered++;
+                } else if (answer.equalsIgnoreCase("n")) {
+                    unanswered++;
                     isValidResponse = true;
                 } else {
                     System.out.println("Please enter a valid response: Y, H, or N.");
                 }
-
-
             }
         }
+
+        double totalWithoutPrompt = ((double) withoutPrompt / questionsInSet) * 100;
+        double totalWithPrompt = ((double) withPrompt / questionsInSet) * 100;
+        int answered = withoutPrompt + withPrompt;
+        double totalAnswered = ((double) answered / questionsInSet) * 100;
+        double totalUnanswered = ((double) unanswered / questionsInSet) * 100;
+
+        System.out.println("Questions answered without prompt:            " + withoutPrompt + " out of " + questionsInSet + " or " + totalWithoutPrompt + "%.");
+        System.out.println("Questions answered with prompt:               " + withPrompt + " out of " + questionsInSet + " or " + totalWithPrompt + "%.");
+        System.out.println("Questions answered with and without prompt:   " + answered + " out of " + questionsInSet + " or " + totalAnswered + "%.");
+        System.out.println("Questions unanswered:                         " + unanswered + " out of " + questionsInSet + " or " + totalUnanswered + "%.");
+
+
 
 
 
