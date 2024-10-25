@@ -49,40 +49,41 @@
             // answeredWithoutPromptButton
             // 
             this.answeredWithoutPromptButton.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.answeredWithoutPromptButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.answeredWithoutPromptButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
             this.answeredWithoutPromptButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.answeredWithoutPromptButton.Location = new System.Drawing.Point(26, 75);
             this.answeredWithoutPromptButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.answeredWithoutPromptButton.Name = "answeredWithoutPromptButton";
             this.answeredWithoutPromptButton.Size = new System.Drawing.Size(244, 114);
             this.answeredWithoutPromptButton.TabIndex = 0;
-            this.answeredWithoutPromptButton.Text = "Answered Without Prompt";
+            this.answeredWithoutPromptButton.Text = "+";
+            this.answeredWithoutPromptButton.UseCompatibleTextRendering = true;
             this.answeredWithoutPromptButton.UseVisualStyleBackColor = false;
             this.answeredWithoutPromptButton.Click += new System.EventHandler(this.answeredWithoutPromptButton_Click);
             // 
             // answeredWithPromptButton
             // 
             this.answeredWithPromptButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.answeredWithPromptButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.answeredWithPromptButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.answeredWithPromptButton.Location = new System.Drawing.Point(26, 230);
             this.answeredWithPromptButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.answeredWithPromptButton.Name = "answeredWithPromptButton";
             this.answeredWithPromptButton.Size = new System.Drawing.Size(244, 114);
             this.answeredWithPromptButton.TabIndex = 1;
-            this.answeredWithPromptButton.Text = "Answered With Prompt";
+            this.answeredWithPromptButton.Text = "Prompted";
             this.answeredWithPromptButton.UseVisualStyleBackColor = false;
             this.answeredWithPromptButton.Click += new System.EventHandler(this.answeredWithPromptButton_Click);
             // 
             // unansweredButton
             // 
             this.unansweredButton.BackColor = System.Drawing.Color.Tomato;
-            this.unansweredButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.unansweredButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
             this.unansweredButton.Location = new System.Drawing.Point(26, 384);
             this.unansweredButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.unansweredButton.Name = "unansweredButton";
             this.unansweredButton.Size = new System.Drawing.Size(244, 114);
             this.unansweredButton.TabIndex = 2;
-            this.unansweredButton.Text = "Unanswered";
+            this.unansweredButton.Text = "-";
             this.unansweredButton.UseVisualStyleBackColor = false;
             this.unansweredButton.Click += new System.EventHandler(this.unansweredButton_Click);
             // 

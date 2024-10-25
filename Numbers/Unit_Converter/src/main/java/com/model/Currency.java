@@ -1,40 +1,44 @@
 package main.java.com.model;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Currency {
 
-    private String originalCurrency;
-    private String targetCurrency;
-    private BigDecimal conversionRate;
+    private String currencyName;
+    private String currencyCode;
+    private Map<String, BigDecimal> conversionRates = new HashMap<String, BigDecimal>();
 
-    public Currency(String originalCurrency, String targetCurrency, BigDecimal conversionRate) {
-        this.originalCurrency = originalCurrency;
-        this.targetCurrency = targetCurrency;
-        this.conversionRate = conversionRate;
+    public Currency(String currencyName, String currencyCode, Map<String, BigDecimal> conversionRates) {
+        this.currencyName = currencyName;
+        this.currencyCode = currencyCode;
+        this.conversionRates = conversionRates;
     }
 
-    public String getOriginalCurrency() {
-        return originalCurrency;
+    public Currency(){}
+
+    public String getCurrencyName() {
+        return currencyName;
     }
 
-    public void setOriginalCurrency(String originalCurrency) {
-        this.originalCurrency = originalCurrency;
+    public void setCurrencyName(String currencyName) {
+        this.currencyName = currencyName;
     }
 
-    public String getTargetCurrency() {
-        return targetCurrency;
+    public String getCurrencyCode() {
+        return currencyCode;
     }
 
-    public void setTargetCurrency(String targetCurrency) {
-        this.targetCurrency = targetCurrency;
+    public void setCurrencyCode(String currencyCode) {
+        this.currencyCode = currencyCode;
     }
 
-    public BigDecimal getConversionRate() {
-        return conversionRate;
+    public Map<String, BigDecimal> getConversionRates() {
+        return conversionRates;
     }
 
-    public void setConversionRate(BigDecimal conversionRate) {
-        this.conversionRate = conversionRate;
+    public void setConversionRates(Map<String, BigDecimal> conversionRates) {
+        this.conversionRates = conversionRates;
     }
 }
