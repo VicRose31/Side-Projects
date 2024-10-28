@@ -14,6 +14,8 @@ public class CurrencyConvert {
 
     public void run() {
 
+        boolean continueProgram = true;
+
         Scanner keyboard = new Scanner(System.in);
 
         final String ARS_STRING = "Argentine Peso";         // +s for >1
@@ -94,6 +96,9 @@ public class CurrencyConvert {
         listOfCurrencies.add(kwdConversionRates);
         listOfCurrencies.add(ngnConversionRates);
         listOfCurrencies.add(usdConversionRates);
+
+        if (continueProgram) {
+
 
         String startingCurrencyName = "";
         int startingCurrencyIndex = 0;
@@ -197,11 +202,22 @@ public class CurrencyConvert {
 
         BigDecimal[] conversionRateArray = listOfCurrencies.get(startingCurrencyIndex);             //get correct conversion rate array from the list of currencies
         BigDecimal conversionRate = conversionRateArray[targetCurrencyIndex];                       //get correct rate from the array of conversion rates
-        BigDecimal amountToConvert = new BigDecimal (Long.parseLong(keyboard.nextLine()));          //store user input as a BigDecimal
+        BigDecimal amountToConvert = BigDecimal.valueOf(Double.parseDouble(keyboard.nextLine()));   //store user input as a BigDecimal
         BigDecimal convertedAmount = conversionRate.multiply(amountToConvert);                      //multiply rate by amount
 
         System.out.println(amountToConvert + " " + startingCurrencyName + " = " + "\n" +
-                            convertedAmount + " " + targetCurrencyName);
+                            convertedAmount + " " + targetCurrencyName + "\n");
+        System.out.println("Would you like to convert another value? Type 'Y' for yes or 'N' for no.)" + "\n");
+        String userDecision = keyboard.nextLine();
+
+        if (userDecision.equalsIgnoreCase("n")) {
+            continueProgram = false;
+        }
+
+
+        } else {
+            System.exit(0);
+        }
 
 
 
