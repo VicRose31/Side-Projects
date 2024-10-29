@@ -4,6 +4,7 @@ import main.java.com.model.Currency;
 
 import java.lang.reflect.Array;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.*;
 
 public class CurrencyConvert {
@@ -14,7 +15,7 @@ public class CurrencyConvert {
 
     public void run() {
 
-        boolean continueProgram = true;
+        boolean run = true;
 
         Scanner keyboard = new Scanner(System.in);
 
@@ -27,16 +28,16 @@ public class CurrencyConvert {
         final String NGN_STRING = "Nigerian Naira";         // +s for >1
         final String USD_STRING = "United States Dollar";   // +s for >1
 
-//        final String ARS_CODE = "ARS";
-//        final String CAD_CODE = "CAD";
-//        final String EUR_CODE = "EUR";
-//        final String INR_CODE = "INR";
-//        final String JPY_CODE = "JPY";
-//        final String KWD_CODE = "KWD";
-//        final String NGN_CODE = "NGN";
-//        final String USD_CODE = "USD";
+        final String ARS_CODE = "ARS";
+        final String CAD_CODE = "CAD";
+        final String EUR_CODE = "EUR";
+        final String INR_CODE = "INR";
+        final String JPY_CODE = "JPY";
+        final String KWD_CODE = "KWD";
+        final String NGN_CODE = "NGN";
+        final String USD_CODE = "USD";
 
-        final int ARS_INDEX = 0;
+        //final int ARS_INDEX = 0;
         final int CAD_INDEX = 1;
         final int EUR_INDEX = 2;
         final int INR_INDEX = 3;
@@ -45,7 +46,6 @@ public class CurrencyConvert {
         final int NGN_INDEX = 6;
         final int USD_INDEX = 7;
 
-        //String[] currencyCodes = new String[] {ARS_CODE, CAD_CODE, EUR_CODE, INR_CODE, JPY_CODE, KWD_CODE, NGN_CODE, USD_CODE};
         BigDecimal[] arsConversionRates = new BigDecimal[]
                         {BigDecimal.valueOf(1), BigDecimal.valueOf(0.0014065629),
                         BigDecimal.valueOf(0.00093637289), BigDecimal.valueOf(0.085135107),
@@ -97,14 +97,15 @@ public class CurrencyConvert {
         listOfCurrencies.add(ngnConversionRates);
         listOfCurrencies.add(usdConversionRates);
 
-        if (continueProgram) {
+        while(run) {
 
 
         String startingCurrencyName = "";
         int startingCurrencyIndex = 0;
+        String startingCurrencyCode = "";
 
         while (startingCurrencyName.equals("")) {
-            System.out.println("Please select a starting currency;");
+            System.out.println("Please select a starting currency:");
             System.out.println("1. " + ARS_STRING);
             System.out.println("2. " + CAD_STRING);
             System.out.println("3. " + EUR_STRING);
@@ -120,9 +121,11 @@ public class CurrencyConvert {
             if (startingCurrencyID >= 1 && startingCurrencyID <=8) {
                 if (startingCurrencyID == 1) {
                     startingCurrencyName = ARS_STRING;
+                    startingCurrencyCode = ARS_CODE;
                 } else if (startingCurrencyID == 2) {
                     startingCurrencyName = CAD_STRING;
                     startingCurrencyIndex = CAD_INDEX;
+                    startingCurrencyCode = ARS_CODE;
                 } else if (startingCurrencyID == 3) {
                     startingCurrencyName = EUR_STRING;
                     startingCurrencyIndex = EUR_INDEX;
@@ -152,9 +155,10 @@ public class CurrencyConvert {
 
         String targetCurrencyName = "";
         int targetCurrencyIndex = 0;
+        String targetCurrencyCode = "";
 
         while (targetCurrencyName.equals("")) {
-            System.out.println("Please select a currency to convert to;");
+            System.out.println("Please select a currency to convert to:");
             System.out.println("1. " + ARS_STRING);
             System.out.println("2. " + CAD_STRING);
             System.out.println("3. " + EUR_STRING);
@@ -168,27 +172,35 @@ public class CurrencyConvert {
             if (targetCurrencyID >= 1 && targetCurrencyID <=8) {
                 if (targetCurrencyID == 1) {
                     targetCurrencyName = ARS_STRING;
+                    targetCurrencyCode = ARS_CODE;
                 } else if (targetCurrencyID == 2) {
                     targetCurrencyName = CAD_STRING;
                     targetCurrencyIndex = CAD_INDEX;
+                    targetCurrencyCode = CAD_CODE;
                 } else if (targetCurrencyID == 3) {
                     targetCurrencyName = EUR_STRING;
                     targetCurrencyIndex = EUR_INDEX;
+                    targetCurrencyCode = EUR_CODE;
                 } else if (targetCurrencyID == 4) {
                     targetCurrencyName = INR_STRING;
                     targetCurrencyIndex = INR_INDEX;
+                    targetCurrencyCode = INR_CODE;
                 } else if (targetCurrencyID == 5) {
                     targetCurrencyName = JPY_STRING;
                     targetCurrencyIndex = JPY_INDEX;
+                    targetCurrencyCode = JPY_CODE;
                 } else if (targetCurrencyID == 6) {
                     targetCurrencyName = KWD_STRING;
                     targetCurrencyIndex = KWD_INDEX;
+                    targetCurrencyCode = KWD_CODE;
                 } else if (targetCurrencyID == 7) {
                     targetCurrencyName = NGN_STRING;
                     targetCurrencyIndex = NGN_INDEX;
+                    targetCurrencyCode = NGN_CODE;
                 } else {
                     targetCurrencyName = USD_STRING;
                     targetCurrencyIndex = USD_INDEX;
+                    targetCurrencyCode = USD_CODE;
                 }
             } else {
                 System.out.println("Please type a number between 1 and 8 to select a target currency." + "\n");
@@ -202,21 +214,19 @@ public class CurrencyConvert {
 
         BigDecimal[] conversionRateArray = listOfCurrencies.get(startingCurrencyIndex);             //get correct conversion rate array from the list of currencies
         BigDecimal conversionRate = conversionRateArray[targetCurrencyIndex];                       //get correct rate from the array of conversion rates
-        BigDecimal amountToConvert = BigDecimal.valueOf(Double.parseDouble(keyboard.nextLine()));   //store user input as a BigDecimal
-        BigDecimal convertedAmount = conversionRate.multiply(amountToConvert);                      //multiply rate by amount
+        BigDecimal amountToConvert = BigDecimal.valueOf(Double.parseDouble(keyboard.nextLine())).setScale(2, RoundingMode.CEILING);   //store user input as a BigDecimal
+        BigDecimal convertedAmount = conversionRate.multiply(amountToConvert).setScale(2, RoundingMode.CEILING);                      //multiply rate by amount
 
-        System.out.println(amountToConvert + " " + startingCurrencyName + " = " + "\n" +
-                            convertedAmount + " " + targetCurrencyName + "\n");
-        System.out.println("Would you like to convert another value? Type 'Y' for yes or 'N' for no.)" + "\n");
+        System.out.println("\n" + startingCurrencyName + " converted to " + targetCurrencyName + "\n" +
+                            amountToConvert + " " + startingCurrencyCode + " = " + "\n" +
+                            convertedAmount + " " + targetCurrencyCode + "\n");
+        System.out.println("Would you like to convert another value? Type 'Y' for yes or 'N' for no.");
         String userDecision = keyboard.nextLine();
 
         if (userDecision.equalsIgnoreCase("n")) {
-            continueProgram = false;
+            run = false;
         }
 
-
-        } else {
-            System.exit(0);
         }
 
 
