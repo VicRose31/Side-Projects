@@ -1,8 +1,5 @@
 package main.java.com;
 
-import main.java.com.model.Currency;
-
-import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.*;
@@ -46,6 +43,7 @@ public class CurrencyConvert {
         final int NGN_INDEX = 6;
         final int USD_INDEX = 7;
 
+        // https://www.xe.com/ rates from 10/28/2024
         BigDecimal[] arsConversionRates = new BigDecimal[]
                         {BigDecimal.valueOf(1), BigDecimal.valueOf(0.0014065629),
                         BigDecimal.valueOf(0.00093637289), BigDecimal.valueOf(0.085135107),
