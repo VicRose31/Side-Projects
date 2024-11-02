@@ -8,3 +8,13 @@ C:\Users\victo\workspace\personal-projects\Side-Projects\SLP-StudentPerformance\
 C:\Users\victo\workspace\personal-projects\Side-Projects\SLP-StudentPerformance\bin\Debug\SLP-StudentPerformance.pdb
 C:\Users\victo\workspace\personal-projects\Side-Projects\SLP-StudentPerformance\obj\Debug\SLP-StudentPerformance.exe
 C:\Users\victo\workspace\personal-projects\Side-Projects\SLP-StudentPerformance\obj\Debug\SLP-StudentPerformance.pdb
+C:\Users\victo\workspace\personal-projects\Side-Projects\Speech Applications\SLP-StudentPerformance\bin\Debug\SLP-StudentPerformance.exe.config
+C:\Users\victo\workspace\personal-projects\Side-Projects\Speech Applications\SLP-StudentPerformance\bin\Debug\SLP-StudentPerformance.exe
+C:\Users\victo\workspace\personal-projects\Side-Projects\Speech Applications\SLP-StudentPerformance\bin\Debug\SLP-StudentPerformance.pdb
+C:\Users\victo\workspace\personal-projects\Side-Projects\Speech Applications\SLP-StudentPerformance\obj\Debug\SLP-StudentPerformance.csproj.AssemblyReference.cache
+C:\Users\victo\workspace\personal-projects\Side-Projects\Speech Applications\SLP-StudentPerformance\obj\Debug\SLP_StudentPerformance.Form1.resources
+C:\Users\victo\workspace\personal-projects\Side-Projects\Speech Applications\SLP-StudentPerformance\obj\Debug\SLP_StudentPerformance.Properties.Resources.resources
+C:\Users\victo\workspace\personal-projects\Side-Projects\Speech Applications\SLP-StudentPerformance\obj\Debug\SLP-StudentPerformance.csproj.GenerateResource.cache
+C:\Users\victo\workspace\personal-projects\Side-Projects\Speech Applications\SLP-StudentPerformance\obj\Debug\SLP-StudentPerformance.csproj.CoreCompileInputs.cache
+C:\Users\victo\workspace\personal-projects\Side-Projects\Speech Applications\SLP-StudentPerformance\obj\Debug\SLP-StudentPerformance.exe
+C:\Users\victo\workspace\personal-projects\Side-Projects\Speech Applications\SLP-StudentPerformance\obj\Debug\SLP-StudentPerformance.pdb
